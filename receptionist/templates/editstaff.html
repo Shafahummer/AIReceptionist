@@ -1,0 +1,249 @@
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+     <!-- Site Metas -->
+    <title>Manager records</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="../static/images/bank_s.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../static/images/bank_l.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/custom.css">
+	<script src="../static/js/modernizr.js"></script> <!-- Modernizr -->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<body id="page-top" class="politics_version">
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+			<img class="img-fluid" src="../static/images/rece.jpg" alt="" />
+		</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+
+
+		  <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/staffreg#about">Register Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/manage#services">Manage Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/assignwork#portfolio">Assign work to staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/enquiry#testimonials">Check Enquiry</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/report#blog">Check report</a>
+			</li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/">Logout</a>
+			</li>
+          </ul>
+        </div>
+
+
+      </div>
+    </nav>
+
+
+
+    <div id="about" class="section lb">
+        <div class="container">
+            <div class="row">
+                	<div class="col-md-6">
+						<div class="message-box">
+
+<form id="form1" name="form1" method="post" action="/updatestaff">
+  <br><br><br>
+    <h2><u>Edit staff</u></h2><br>
+  <table width="510">
+    <tr>
+      <td width="71">Name</td>
+      <td width="423"><label>
+        <input type="text" name="name" value="{{val[2]}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>gender</td>
+      <td><label>
+        <input type="radio" name="gender" value="male" {% if val[3]=='male' %}checked{% endif %}/>Male
+        <input type="radio" name="gender" value="female"{% if val[3]=='female' %}checked{% endif %}/>Female<br>
+      </label></td>
+    </tr>
+    <tr>
+      <td>age</td>
+      <td><label>
+        <input type="text" name="age" value="{{val[4]}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>qualification</td>
+      <td><label>
+        <input type="checkbox" name="checkbox" value="degree"{% if val[5]=='degree' %}checked{% endif %}/>
+        degree
+        <input type="checkbox" name="checkbox" value="12th"{% if val[5]=='12th' %}checked{% endif %}/>
+        12th
+        <input type="checkbox" name="checkbox" value="10th"{% if val[5]=='10th' %}checked{% endif %}/>
+      10th
+      <input type="checkbox" name="checkbox" value="others"{% if val[5]=='others' %}checked{% endif %}/>
+      others</label></td>
+    </tr>
+    <tr>
+      <td>place</td>
+      <td><label>
+        <input type="text" name="place" value="{{val[6]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>post</td>
+      <td><label>
+        <input type="text" name="post" value="{{val[7]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>district</td>
+      <td><label>
+        <select name="district">
+          <option>(select district)</option>
+          <option value="Kasargod" {% if val[8]=='Kasargod' %}selected{% endif %}>Kasargod</option>
+           <option value="Kannur"{% if val[8]=='Kannur' %}selected{% endif %}>Kannur</option>
+           <option value="Wayanad"{% if val[8]=='Wayanad' %}selected{% endif %}>Wayanad</option>
+           <option value="Kozhikkod"{% if val[8]=='Kozhikkod' %}selected{% endif %}>Kozhikkod</option>
+           <option value="Malappuram"{% if val[8]=='Malappuram' %}selected{% endif %}>Malappuram</option>
+           <option value="Palakkad"{% if val[8]=='Palakkad' %}selected{% endif %}>Palakkad</option>
+           <option value="Thrissur"{% if val[8]=='Thrissur' %}selected{% endif %}>Thrissur</option>
+           <option value="Ernamkulam"{% if val[8]=='Ernamkulam' %}selected{% endif %}>Ernamkulam</option>
+           <option value="Idukki"{% if val[8]=='Idukki' %}selected{% endif %}>Idukki</option>
+           <option value="Kottayam"{% if val[8]=='Kottayam' %}selected{% endif %}>Kottayam</option>
+           <option value="Alappuzha"{% if val[8]=='Alappuzha' %}selected{% endif %}>Alappuzha</option>
+           <option value="Pathanamthitta"{% if val[8]=='Pathanamthitta' %}selected{% endif %}>Pathanamthitta</option>
+           <option value="Kollam"{% if val[8]=='Kollam' %}selected{% endif %}>Kollam</option>
+           <option value="Thiruvananthapuram"{% if val[8]=='Thiruvananthapuram' %}selected{% endif %}>Thiruvananthapuram</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td><label>
+        <input type="text" name="pin" value="{{val[9]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>contact</td>
+      <td><label>
+        <input type="text" name="contact" value="{{val[10]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td><label>
+        <input type="text" name="email" value="{{val[11]}}"/>
+      </label></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><label>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="submit" name="Submit" value="Update" />
+
+      </label>        <div align="center"></div></td>
+    </tr>
+  </table>
+</form>
+
+
+						</div><!-- end messagebox -->
+                	</div><!-- end col -->
+
+                	<div class="col-md-6">
+                    	<div class="right-box-pro wow fadeIn"><br><br><br>
+					<img src="../static/images/g.jpg" alt="" class="img-fluid img-rounded fat-ab">
+
+                    	</div><!-- end media -->
+                	</div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">Nickie</a> Design By :
+					<a href="https://html.design/">html design</a></p>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="../static/js/all.js"></script>
+	<!-- Camera Slider -->
+	<script src="../static/js/jquery.mobile.customized.min.js"></script>
+	<script src="../static/js/jquery.easing.1.3.js"></script>
+	<script src="../static/js/parallaxie.js"></script>
+	<script src="../static/js/slick.min.js"></script>
+	<script src="../static/js/animated-slider.js"></script>
+	<!-- Contact form JavaScript -->
+    <script src="../static/js/jqBootstrapValidation.js"></script>
+    <script src="../static/js/contact_me.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="../static/js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'index_staff_home.html' %}
+{% block update_report %}
+<body>
+<form id="form1" name="form1" method="post" action="/update_title">
+  <table width="413" height="181">
+    <tr>
+      <td style="color:#000">Title</td>
+      <td><label>
+        <input type="text" name="title" value="{{val[0]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td style="color:#000">Report</td>
+      <td><label>
+      </label><a href="/change_report" style="background-color:#FAC42F">change report</a> </td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="Submit" value="Update" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+{% block img2 %}
+ <img src="../static/images/g.jpg" alt="" class="img-fluid img-rounded fat-ab">
+{% endblock %}

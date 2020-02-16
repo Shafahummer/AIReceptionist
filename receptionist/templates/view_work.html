@@ -1,0 +1,30 @@
+{% extends 'index_staff_home.html' %}
+{% block view_work %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="800" height="119" cellpadding="10">
+    <tr>
+      <td width="100" style="color:#E74292">work</td>
+      <td width="100" style="color:#E74292">date</td>
+      <td width="100" style="color:#E74292">Last date</td>
+      <td></td>
+
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td width="100" style="color:#2B2B52">{{i[0]}}</td>
+      <td width="100" style="color:#2B2B52">{{i[1]}}</td>
+      <td width="100" style="color:#2B2B52">{{i[2]}}</td>
+      <td><a href="../static/work/{{i[0]}}" style="background-color:#FAC42F">download</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/add_report" style="background-color:#FAC42F">Add Report</a></td>
+
+
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+{% block img1 %}
+ <img src="../static/images/g.jpg" alt="" class="img-fluid img-rounded fat-ab">
+{% endblock %}

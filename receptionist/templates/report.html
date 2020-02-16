@@ -1,0 +1,27 @@
+{% extends 'index_login.html' %}
+{% block report %}
+
+<body>
+<h2><u>Check report</u></h2><br>
+<form id="form1" name="form1" method="post" action="/report">
+  <table width="500" border="1" cellpadding="10">
+    <tr>
+      <td style="color:#000">staff</td>
+      <td style="color:#000">work</td>
+      <td style="color:#000">report</td>
+    </tr>
+
+    {% for i in val %}
+    <tr>
+      <td style="color:#333945">{{i[0]}}</td>
+      <td><a href="./static/work/{{i[1]}}" style="background-color:#FAC42F">{{i[1]}}</a></td>
+      <td><a href="./static/reports/{{i[2]}}" style="background-color:#FAC42F">{{i[2]}}</a> </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+{% block img4 %}
+ <img src="../static/images/g.jpg" alt="" class="img-fluid img-rounded fat-ab">
+{% endblock %}

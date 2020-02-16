@@ -1,0 +1,45 @@
+{% extends 'index_login.html' %}
+{% block assign_work %}
+
+<body>
+<h2><u>Assign work to staff</u></h2><br>
+<form id="form1" name="form1" method="post" action="/assignTask" enctype="multipart/form-data">
+<table cellpadding="10">
+  <tr>
+    <td style="color:#000">Staff</td>
+    <td colspan="2">
+      <label>
+        <select name="select" required>
+          {% for i in val%}
+          <option value="{{i[0]}}">{{i[1]}}</option>
+          {% endfor %}
+        </select>
+        </label>    </td>
+  </tr>
+  <tr>
+    <td style="color:#000">work</td>
+    <td><label>
+      <input type="file" name="file" required />
+    </label></td>
+  </tr>
+  <tr>
+    <td style="color:#000">finish date</td>
+    <td><label>
+      <input type="date" name="date" required/>
+    </label></td>
+  </tr>
+  <tr>
+    <td colspan="3"><label>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit" name="Submit" value="Add" />
+    </label></td>
+    </tr>
+</table>   
+</form>
+</body>
+{% endblock %}
+{% block img2 %}
+ <img src="../static/images/g.jpg" alt="" class="img-fluid img-rounded fat-ab">
+{% endblock %}

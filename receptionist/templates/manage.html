@@ -1,0 +1,42 @@
+{% extends 'index_login.html' %}
+{% block manage_staff %}
+
+<body>
+<h2><u>Manage staff</u></h2><br>
+<form id="form1" name="form1" method="post" action="">
+  <table border="2" align="center" cellpadding="10">
+    <tr>
+      <td style="color:#000">Name</td>
+      <td style="color:#000">gender</td>
+      <td style="color:#000">age</td>
+      <td style="color:#000">qualification</td>
+      <td style="color:#000">place</td>
+      <td style="color:#000">post</td>
+      <td style="color:#000">district</td>
+      <td style="color:#000">pin</td>
+      <td style="color:#000">contact</td>
+      <td style="color:#000">email</td>
+      <td style="color:#000">manage</td>
+    </tr>
+    {% for i in val %}
+
+    <tr>
+      <td style="color:#333945">{{i[2]}}</td>
+      <td style="color:#333945">{{i[3]}}</td>
+      <td style="color:#333945">{{i[4]}}</td>
+      <td style="color:#333945">{{i[5]}}</td>
+      <td style="color:#333945">{{i[6]}}</td>
+      <td style="color:#333945">{{i[7]}}</td>
+      <td style="color:#333945">{{i[8]}}</td>
+      <td style="color:#333945">{{i[9]}}</td>
+      <td style="color:#333945">{{i[10]}}</td>
+      <td style="color:#333945">{{i[11]}}</td>
+      <td><p><a href="{{url_for('editstaff',id=i[0])}}" style="background-color:#FAC42F">edit</a></p>
+      <p><a href="{{url_for('staffdelete',id=i[1])}}" style="background-color:#FAC42F">delete</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+
+</body>
+{% endblock %}

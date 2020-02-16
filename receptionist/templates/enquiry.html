@@ -1,0 +1,28 @@
+{% extends 'index_login.html' %}
+{% block enquiry %}
+
+<body>
+<h2><u>Check enquiry</u></h2><br>
+<form id="form1" name="form1" method="post" action="">
+  <table width="1100" height="185" border="2" cellpadding="10">
+    <tr>
+      <td style="color:#000">Date</td>
+      <td style="color:#000">Enquiry</td>
+      <td style="color:#000">Response</td>
+      <td style="color:#000">email</td>
+    </tr>
+    {% for i in val%}
+    <tr>
+      <td style="color:#333945">{{i[0]}}</td>
+      <td style="color:#333945">{{i[1]}}</td>
+      <td style="color:#333945">{{i[2]}}</td>
+      <td style="color:#333945">{{i[3]}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+{% block img3 %}
+ <img src="../static/images/g.jpg" alt="" class="img-fluid img-rounded fat-ab">
+{% endblock %}
