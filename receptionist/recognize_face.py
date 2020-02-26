@@ -39,7 +39,7 @@ def rec_face_image(imagepath):
         # attempt to match each face in the input image to our known
         # encodings
         matches = face_recognition.compare_faces(data["encodings"],
-                                                 encoding, tolerance=0.6)
+                                                 encoding, tolerance=0.4)
         name = "Unknown"
 
         # check to see if we have found a match

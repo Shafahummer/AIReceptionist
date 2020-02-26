@@ -12,7 +12,7 @@ cmd = con.cursor()
 WORD = re.compile(r'\w+')
 
 
-@app.route('/message', methods=['post'])
+@app.route('/message', methods=['post', 'get'])
 def message():
     msg = request.form["message"]
 
@@ -173,4 +173,4 @@ def addimg():
 
 
 if __name__ == '__main__':
-    app.run(host='192.168.43.107', port=5000)
+    app.run(host='192.168.43.61', port=5000)
